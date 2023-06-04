@@ -374,7 +374,7 @@ export const setCarImages = async (req, res, next) => {
   const carId = req.body.carId;
   let carToUpdate;
   const car = await CarModel.findById(carId);
-  const oldImages = car?.src || [];
+  const oldImages = car.src || [];
 
   oldImages.forEach((image) => {
     if (fs.existsSync(`uploads/${image}`)) {
