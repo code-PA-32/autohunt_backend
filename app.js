@@ -37,10 +37,10 @@ app.use("/api/chats", chatRouter);
 
 app.use("/api/logos", logoRouter);
 
-app.use((req, res, next) => {
-  const error = new HttpError("Could not find this route", 404);
-  throw error;
-});
+// app.use((req, res, next) => {
+//   const error = new HttpError("Could not find this route", 404);
+//   throw error;
+// });
 
 mongoose
   .connect(
