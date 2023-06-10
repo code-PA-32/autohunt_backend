@@ -757,3 +757,19 @@ export const deleteAutohuntComment = async (req, res, next) => {
   }
   res.json(commentId);
 };
+
+export const addCarViews = async (req, res, next) => {
+  const { carId } = req.params;
+  try {
+    const carToUpdate = await CarModel.findByIdAndUpdate(
+      carId,
+      { $inc: { views: 1 } },
+      { new: true }
+    );
+    if (!carToUpdate) {
+      return next(new HttpError("Can't find car to update", 404));
+    }
+  } catch (error) {
+    return next(new HttpError("Can't update car views", 500));
+  }
+};

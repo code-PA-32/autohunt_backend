@@ -7,7 +7,7 @@ import { HttpError } from "./models/HttpError.js";
 import { userRouter } from "./routes/user-routes.js";
 import { sliderRouter } from "./routes/slider-routes.js";
 import { filtersRouter } from "./routes/filters-routes.js";
-import { getCarsRouter } from "./routes/car-routes.js";
+import { carsRouter } from "./routes/car-routes.js";
 import { ratingRouter } from "./routes/rating-routes.js";
 import { newsRouter } from "./routes/news-router.js";
 import { logoRouter } from "./routes/logo-routers.js";
@@ -27,7 +27,7 @@ app.use("/api/sliders", sliderRouter);
 
 app.use("/api/filters", filtersRouter);
 
-app.use("/api/cars", getCarsRouter);
+app.use("/api/cars", carsRouter);
 
 app.use("/api/rating", ratingRouter);
 

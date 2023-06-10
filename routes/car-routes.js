@@ -21,46 +21,49 @@ import {
   addAutohuntComment,
   deleteAutohuntComment,
   getAutohuntReviewLimit,
+  addCarViews,
 } from "../controllers/car-controller.js";
 
-export const getCarsRouter = express.Router();
+export const carsRouter = express.Router();
 
-getCarsRouter.get("/new-cars", getNewRecommended);
+carsRouter.get("/new-cars", getNewRecommended);
 
-getCarsRouter.get("/used-cars", getUsedRecommended);
+carsRouter.get("/used-cars", getUsedRecommended);
 
-getCarsRouter.get("/compare-cars", getTwoCompareCars);
+carsRouter.get("/compare-cars", getTwoCompareCars);
 
-getCarsRouter.get("/autohunt-limit-cars", getAutohuntReviewLimit);
+carsRouter.get("/autohunt-limit-cars", getAutohuntReviewLimit);
 
-getCarsRouter.get("/autohunt-reviews", getAutohuntReview);
+carsRouter.get("/autohunt-reviews", getAutohuntReview);
 
-getCarsRouter.get("/filtered-cars", getCarsByFilters);
+carsRouter.get("/filtered-cars", getCarsByFilters);
 
-getCarsRouter.post("/compare-cars-byId", getCompareById);
+carsRouter.post("/compare-cars-byId", getCompareById);
 
-getCarsRouter.post("/create-car", createOrUpdateCar);
+carsRouter.post("/create-car", createOrUpdateCar);
 
-getCarsRouter.put("/update-car", setCarImages);
+carsRouter.put("/update-car", setCarImages);
 
-getCarsRouter.get("/user-cars/:saleId", getUsersCar);
+carsRouter.get("/user-cars/:saleId", getUsersCar);
 
-getCarsRouter.post("/user-liked-cars", getUserLikedCars);
+carsRouter.post("/user-liked-cars", getUserLikedCars);
 
-getCarsRouter.get("/update-car-byId/:carId", getCarByIdAndLoad);
+carsRouter.get("/update-car-byId/:carId", getCarByIdAndLoad);
 
-getCarsRouter.get("/car-reviews-details/:carId", getReviewDetailsById);
+carsRouter.get("/car-reviews-details/:carId", getReviewDetailsById);
 
-getCarsRouter.post("/car-reviews", getCarsReviews);
+carsRouter.post("/car-reviews", getCarsReviews);
 
-getCarsRouter.post("/car-add-review", addCarReview);
+carsRouter.post("/car-add-review", addCarReview);
 
-getCarsRouter.post("/car-delete-review", deleteCarReview);
+carsRouter.post("/car-delete-review", deleteCarReview);
 
-getCarsRouter.post("/autohunt-delete-comment", deleteAutohuntComment);
+carsRouter.post("/autohunt-delete-comment", deleteAutohuntComment);
 
-getCarsRouter.post("/autohunt-add-comment", addAutohuntComment);
+carsRouter.post("/autohunt-add-comment", addAutohuntComment);
 
-getCarsRouter.get("/autohunt/:id", getAutohuntCarDetails);
+carsRouter.get("/autohunt/:id", getAutohuntCarDetails);
 
-getCarsRouter.get("/:id", getOneCarById);
+carsRouter.patch("/add-views/:carId", addCarViews);
+
+carsRouter.get("/:id", getOneCarById);
